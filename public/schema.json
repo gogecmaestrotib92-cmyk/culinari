@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Culinari - AI Kulinarstvo uz Vanju",
+  "url": "https://culinari.rs",
+  "description": "AI kulinarstvo uz Vanju donosi zdrave deserte bez šećera i aditiva. 100% prirodni sastojci, AI-optimizovana ishrana.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Culinari",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://culinari.rs/logo.png"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://culinari.rs/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
