@@ -23,13 +23,12 @@ export default function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Optionally unobserve after animation triggers
           observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px',
       }
     );
 
@@ -46,26 +45,26 @@ export default function ScrollReveal({
   }, []);
 
   const getAnimationClass = () => {
-    const base = 'transition-all duration-1000 ease-out';
+    const base = 'transition-opacity duration-500 ease-out';
     
     if (!isVisible) {
       switch (direction) {
         case 'up':
-          return `${base} opacity-0 translate-y-20`;
+          return `${base} opacity-0 translate-y-8 transition-transform duration-500`;
         case 'down':
-          return `${base} opacity-0 -translate-y-20`;
+          return `${base} opacity-0 -translate-y-8 transition-transform duration-500`;
         case 'left':
-          return `${base} opacity-0 translate-x-20`;
+          return `${base} opacity-0 translate-x-8 transition-transform duration-500`;
         case 'right':
-          return `${base} opacity-0 -translate-x-20`;
+          return `${base} opacity-0 -translate-x-8 transition-transform duration-500`;
         case 'zoom':
-          return `${base} opacity-0 scale-90`;
+          return `${base} opacity-0 scale-95 transition-transform duration-500`;
         default:
-          return `${base} opacity-0 translate-y-20`;
+          return `${base} opacity-0 translate-y-8 transition-transform duration-500`;
       }
     }
     
-    return `${base} opacity-100 translate-y-0 translate-x-0 scale-100`;
+    return `${base} opacity-100 translate-y-0 translate-x-0 scale-100 transition-transform duration-500`;
   };
 
   return (
