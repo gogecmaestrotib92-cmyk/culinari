@@ -15,24 +15,27 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#desserts" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#about" className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-sm">
+              O Vanji
+            </a>
+            <a href="#desserts" className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-sm">
               Deserti
             </a>
-            <a href="#benefits" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
-              Prednosti
+            <a href="#testimonials" className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-sm">
+              Utisci
             </a>
-            <a href="#pricing" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
-              Proizvodi
+            <a href="#free-sample" className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-sm">
+              Besplatno
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-orange-500 transition-colors font-medium">
-              Kontakt
+            <a href="#pricing" className="text-gray-700 hover:text-orange-500 transition-colors font-medium text-sm">
+              Cene
             </a>
             <a 
               href="#pricing" 
               className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all font-medium"
             >
-              Poruči
+              🛒 Poruči
             </a>
           </div>
 
@@ -56,32 +59,53 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4">
             <a 
+              href="#about" 
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              👩‍🍳 O Vanji
+            </a>
+            <a 
               href="#desserts" 
               className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Deserti
+              🍰 Deserti
             </a>
             <a 
-              href="#benefits" 
+              href="#testimonials" 
               className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Prednosti
+              ⭐ Utisci kupaca
+            </a>
+            <a 
+              href="#free-sample" 
+              className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              🎁 Besplatan recept
             </a>
             <a 
               href="#pricing" 
               className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Proizvodi
+              💰 Cene
             </a>
             <a 
               href="#contact" 
               className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Kontakt
+              📧 Kontakt
+            </a>
+            <a 
+              href="#pricing" 
+              className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-3 rounded-full text-center font-bold mt-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              🛒 PORUČI SADA
             </a>
           </div>
         )}

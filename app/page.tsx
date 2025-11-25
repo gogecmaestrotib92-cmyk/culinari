@@ -1,8 +1,13 @@
 import Script from 'next/script';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import AboutVanja from './components/AboutVanja';
 import FeaturedDesserts from './components/FeaturedDesserts';
+import VideoPreview from './components/VideoPreview';
 import HealthBenefits from './components/HealthBenefits';
+import WhatYouGet from './components/WhatYouGet';
+import Testimonials from './components/Testimonials';
+import FreeSample from './components/FreeSample';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -38,8 +43,13 @@ export default function Home() {
         <Header />
         <main>
           <Hero />
+          <AboutVanja />
           <FeaturedDesserts />
+          <VideoPreview />
           <HealthBenefits />
+          <WhatYouGet />
+          <Testimonials />
+          <FreeSample />
           <Pricing />
           <Contact />
         </main>
