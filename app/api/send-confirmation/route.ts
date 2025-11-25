@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
               ${product.includes('E-Knjiga') ? `
               <h3>📚 Pristup E-Knjizi</h3>
               <p>Tvoja e-knjiga je spremna za preuzimanje! Klikni na dugme ispod:</p>
-              <a href="https://culinari.rs/download?order=${orderId || Date.now()}" class="button">
+              <a href="https://airecepti.com/ebook/ai-recepti.pdf" class="button">
                 📥 Preuzmi E-Knjigu
               </a>
               ` : ''}
