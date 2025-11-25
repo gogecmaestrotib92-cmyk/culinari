@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to customer
     const { data, error } = await resend.emails.send({
-      from: 'Culinari <noreply@culinari.rs>', // Change to your verified domain
+      from: 'AI Recepti <noreply@airecepti.com>',
       to: customerEmail,
       subject: `✅ Potvrda narudžbine - ${product}`,
       html: `
@@ -100,8 +100,8 @@ export async function POST(request: NextRequest) {
 
     // Also send notification to you (the seller)
     await resend.emails.send({
-      from: 'Culinari <noreply@culinari.rs>',
-      to: 'vanja@culinari.rs', // Change to your email
+      from: 'AI Recepti <noreply@airecepti.com>',
+      to: 'gogecmaestrotib92@gmail.com',
       subject: `🛒 Nova narudžbina - ${product}`,
       html: `
         <h2>Nova narudžbina!</h2>
