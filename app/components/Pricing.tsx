@@ -38,33 +38,33 @@ function PricingCard({ name, price, priceEUR, description, features, image, popu
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
       </div>
 
-      <div className="p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{name}</h3>
-        <p className="text-gray-600 text-sm mb-6">{description}</p>
+      <div className="p-6 sm:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{name}</h3>
+        <p className="text-gray-600 text-sm mb-4">{description}</p>
         <div className="mb-2">
-          <span className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">
+          <span className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">
             {price} RSD
           </span>
         </div>
-        <p className="text-gray-500 text-sm mb-6">≈ €{priceEUR}</p>
+        <p className="text-gray-500 text-sm mb-4">≈ €{priceEUR}</p>
 
-        <ul className="space-y-4 mb-8">
+        <ul className="space-y-3 mb-6">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="text-orange-500 mt-1 flex-shrink-0 text-lg">✓</span>
-              <span className="text-gray-600">{feature}</span>
+            <li key={index} className="flex items-start gap-2">
+              <span className="text-orange-500 mt-0.5 flex-shrink-0">✓</span>
+              <span className="text-gray-600 text-sm">{feature}</span>
             </li>
           ))}
         </ul>
 
         <button 
           onClick={onBuyClick}
-          className={`w-full py-4 rounded-full font-semibold text-lg transition-all ${
+          className={`w-full py-4 rounded-full font-bold text-lg transition-all active:scale-95 ${
           popular
-            ? 'bg-gradient-to-r from-orange-500 to-orange-400 text-white hover:shadow-xl hover:scale-105'
-            : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
+            ? 'bg-gradient-to-r from-orange-500 to-orange-400 text-white shadow-lg hover:shadow-xl'
+            : 'bg-orange-500 text-white hover:bg-orange-600'
         }`}>
-          🛒 Kupite Sada
+          🛒 PORUČI SADA
         </button>
       </div>
     </div>
