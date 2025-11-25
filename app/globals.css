@@ -11,21 +11,6 @@
   --text-medium: #6B5D5D;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  
-  /* Custom warm colors */
-  --color-warm-peach: var(--warm-peach);
-  --color-warm-orange: var(--warm-orange);
-  --color-warm-cream: var(--warm-cream);
-  --color-warm-tan: var(--warm-tan);
-  --color-text-dark: var(--text-dark);
-  --color-text-medium: var(--text-medium);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);

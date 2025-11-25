@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -30,18 +31,21 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Stupite u <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Kontakt</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Imate pitanja? Voleli bismo da čujemo od vas. Pošaljite nam poruku i odgovoriti ćemo što je pre moguće.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Stupite u <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Kontakt</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Imate pitanja? Voleli bismo da čujemo od vas. Pošaljite nam poruku i odgovoriti ćemo što je pre moguće.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-orange-50 to-peach-50 rounded-3xl p-8 md:p-10">
+          <ScrollReveal direction="left">
+            <div className="bg-gradient-to-br from-orange-50 to-peach-50 rounded-3xl p-8 md:p-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
@@ -99,9 +103,11 @@ export default function Contact() {
               </button>
             </form>
           </div>
+          </ScrollReveal>
 
           {/* Contact Info */}
-          <div className="flex flex-col justify-center space-y-8">
+          <ScrollReveal direction="right">
+            <div className="flex flex-col justify-center space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Kontakt Informacije</h3>
               <div className="space-y-6">
@@ -163,6 +169,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

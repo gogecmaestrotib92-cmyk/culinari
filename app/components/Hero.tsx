@@ -1,5 +1,7 @@
 'use client';
 
+import ScrollReveal from './ScrollReveal';
+
 export default function Hero() {
   return (
     <section id="home" className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-orange-50 via-amber-50 to-white overflow-hidden">

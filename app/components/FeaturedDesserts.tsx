@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 interface DessertCardProps {
   emoji: string;
@@ -150,19 +151,23 @@ export default function FeaturedDesserts() {
   return (
     <section id="desserts" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Izdvojeni <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Deserti</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Svaki desert je napravljen od strane AI-a kako bi maksimizovao ukus uz optimizovanu ishranu. 
-            Bez rafinisanog šećera, bez veštačkih aditiva – samo zdravi sastojci.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Izdvojeni <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Deserti</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Svaki desert je napravljen od strane AI-a kako bi maksimizovao ukus uz optimizovanu ishranu. 
+              Bez rafinisanog šećera, bez veštačkih aditiva – samo zdravi sastojci.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {desserts.map((dessert, index) => (
-            <DessertCard key={index} {...dessert} />
+            <ScrollReveal key={index} delay={index * 100} direction="zoom">
+              <DessertCard {...dessert} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
