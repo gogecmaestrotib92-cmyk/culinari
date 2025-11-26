@@ -99,18 +99,18 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="utisci" className="py-16 md:py-20 bg-gradient-to-br from-[#0c0a09] via-[#1c1917] to-[#0c0a09] overflow-hidden">
+    <section id="utisci" className="py-16 md:py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
+            <span className="inline-flex items-center gap-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-orange-200">
               <span className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => <span key={i}>⭐</span>)}
               </span>
               2000+ zadovoljnih kupaca
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
-              Šta kažu <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">naši kupci</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+              Šta kažu <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">naši kupci</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -120,7 +120,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-orange-500 shadow-lg transition-all hover:scale-110"
             aria-label="Prethodni"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,7 +130,7 @@ export default function Testimonials() {
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white backdrop-blur-sm rounded-full flex items-center justify-center text-orange-500 shadow-lg transition-all hover:scale-110"
             aria-label="Sledeći"
           >
             <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,7 +151,7 @@ export default function Testimonials() {
                       : 'opacity-0 translate-x-full scale-95'
                 }`}
               >
-                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/10 h-full">
+                <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-orange-100 shadow-xl h-full">
                   <div className="flex flex-col md:flex-row gap-6 h-full">
                     {/* Left: Avatar & Info */}
                     <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-3 md:min-w-[140px]">
@@ -161,15 +161,15 @@ export default function Testimonials() {
                           alt={testimonial.name}
                           className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-3 border-orange-400 shadow-lg shadow-orange-500/20"
                         />
-                        <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-[#1c1917] flex items-center justify-center">
+                        <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-white flex items-center justify-center">
                           <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
                       </div>
                       <div className="text-left md:text-left">
-                        <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                        <p className="text-[#a8a29e] text-sm">📍 {testimonial.location}</p>
+                        <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                        <p className="text-gray-500 text-sm">📍 {testimonial.location}</p>
                         <div className="mt-1">
                           <StarRating rating={testimonial.rating} />
                         </div>

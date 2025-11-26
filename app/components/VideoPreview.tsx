@@ -7,17 +7,17 @@ export default function VideoPreview() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="video" className="py-16 md:py-24 bg-gradient-to-br from-[#0c0a09] via-[#1c1917] to-[#0c0a09]">
+    <section id="video" className="py-16 md:py-24 bg-gradient-to-br from-orange-50 via-white to-orange-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
-            <span className="inline-block bg-orange-500/20 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               🎥 Pogledajte kako izgleda
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Zavirite u <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Vanjinu kuhinju</span>
             </h2>
-            <p className="text-lg text-[#a8a29e] max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Pogledajte kako izgledaju naši video tutoriali i zašto su drugačiji od svega što ste videli
             </p>
           </div>
@@ -57,14 +57,14 @@ export default function VideoPreview() {
                   </div>
                 </>
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-[#1c1917]">
-                  <div className="text-center text-white">
+                <div className="w-full h-full flex items-center justify-center bg-orange-50">
+                  <div className="text-center text-gray-900">
                     <div className="text-6xl mb-4">🎬</div>
                     <p className="text-xl">Video se učitava...</p>
-                    <p className="text-[#a8a29e] mt-2">Ovde bi bio embedovan pravi video</p>
+                    <p className="text-gray-500 mt-2">Ovde bi bio embedovan pravi video</p>
                     <button 
                       onClick={() => setIsPlaying(false)}
-                      className="mt-4 text-orange-400 hover:text-orange-300"
+                      className="mt-4 text-orange-500 hover:text-orange-600"
                     >
                       ← Nazad na thumbnail
                     </button>
@@ -75,21 +75,21 @@ export default function VideoPreview() {
 
             {/* Video features */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              <div className="bg-white/5 rounded-xl p-4 text-center">
+              <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-orange-100">
                 <div className="text-2xl mb-2">📹</div>
-                <p className="text-white font-medium text-sm">HD Kvalitet</p>
+                <p className="text-gray-800 font-medium text-sm">HD Kvalitet</p>
               </div>
-              <div className="bg-white/5 rounded-xl p-4 text-center">
+              <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-orange-100">
                 <div className="text-2xl mb-2">🎯</div>
-                <p className="text-white font-medium text-sm">Korak po korak</p>
+                <p className="text-gray-800 font-medium text-sm">Korak po korak</p>
               </div>
-              <div className="bg-white/5 rounded-xl p-4 text-center">
+              <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-orange-100">
                 <div className="text-2xl mb-2">🇷🇸</div>
-                <p className="text-white font-medium text-sm">Srpski jezik</p>
+                <p className="text-gray-800 font-medium text-sm">Srpski jezik</p>
               </div>
-              <div className="bg-white/5 rounded-xl p-4 text-center">
+              <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-orange-100">
                 <div className="text-2xl mb-2">♾️</div>
-                <p className="text-white font-medium text-sm">Neograničen pristup</p>
+                <p className="text-gray-800 font-medium text-sm">Neograničen pristup</p>
               </div>
             </div>
           </div>
