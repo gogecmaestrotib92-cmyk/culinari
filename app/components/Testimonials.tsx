@@ -99,7 +99,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="utisci" className="py-16 md:py-20 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950 overflow-hidden">
+    <section id="utisci" className="py-16 md:py-20 bg-gradient-to-br from-[#0c0a09] via-[#1c1917] to-[#0c0a09] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-10">
@@ -161,7 +161,7 @@ export default function Testimonials() {
                           alt={testimonial.name}
                           className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-3 border-orange-400 shadow-lg shadow-orange-500/20"
                         />
-                        <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-stone-900 flex items-center justify-center">
+                        <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-2 border-[#1c1917] flex items-center justify-center">
                           <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
@@ -169,7 +169,7 @@ export default function Testimonials() {
                       </div>
                       <div className="text-left md:text-left">
                         <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                        <p className="text-stone-400 text-sm">📍 {testimonial.location}</p>
+                        <p className="text-[#a8a29e] text-sm">📍 {testimonial.location}</p>
                         <div className="mt-1">
                           <StarRating rating={testimonial.rating} />
                         </div>

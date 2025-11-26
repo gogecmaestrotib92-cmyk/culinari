@@ -7,7 +7,7 @@ export default function VideoPreview() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="video" className="py-16 md:py-24 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950">
+    <section id="video" className="py-16 md:py-24 bg-gradient-to-br from-[#0c0a09] via-[#1c1917] to-[#0c0a09]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -17,7 +17,7 @@ export default function VideoPreview() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Zavirite u <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent">Vanjinu kuhinju</span>
             </h2>
-            <p className="text-lg text-stone-400 max-w-2xl mx-auto">
+            <p className="text-lg text-[#a8a29e] max-w-2xl mx-auto">
               Pogledajte kako izgledaju naši video tutoriali i zašto su drugačiji od svega što ste videli
             </p>
           </div>
@@ -57,11 +57,11 @@ export default function VideoPreview() {
                   </div>
                 </>
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-stone-900">
+                <div className="w-full h-full flex items-center justify-center bg-[#1c1917]">
                   <div className="text-center text-white">
                     <div className="text-6xl mb-4">🎬</div>
                     <p className="text-xl">Video se učitava...</p>
-                    <p className="text-stone-400 mt-2">Ovde bi bio embedovan pravi video</p>
+                    <p className="text-[#a8a29e] mt-2">Ovde bi bio embedovan pravi video</p>
                     <button 
                       onClick={() => setIsPlaying(false)}
                       className="mt-4 text-orange-400 hover:text-orange-300"

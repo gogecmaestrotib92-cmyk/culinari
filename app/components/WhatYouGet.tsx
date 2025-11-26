@@ -61,14 +61,14 @@ export default function WhatYouGet() {
   };
 
   return (
-    <section id="what-you-get" className="py-16 md:py-20 bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950 overflow-hidden">
+    <section id="what-you-get" className="py-16 md:py-20 bg-gradient-to-b from-[#0c0a09] via-[#1c1917] to-[#0c0a09] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
               Izaberite vaš <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">paket</span>
             </h2>
-            <p className="text-stone-400 max-w-xl mx-auto">
+            <p className="text-[#a8a29e] max-w-xl mx-auto">
               Kliknite na paket da vidite sve pogodnosti
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function WhatYouGet() {
             className={`flex-1 cursor-pointer rounded-3xl p-6 transition-all duration-500 border-2 ${
               activeTab === 'book'
                 ? 'bg-gradient-to-br from-orange-500/30 to-amber-500/30 border-orange-500 shadow-2xl shadow-orange-500/20 scale-[1.02]'
-                : 'bg-stone-900/50 border-stone-800 hover:border-orange-500/50 hover:bg-stone-900'
+                : 'bg-[#1c1917]/50 border-[#292524] hover:border-orange-500/50 hover:bg-[#1c1917]'
             }`}
           >
             <div className="text-center">
@@ -100,13 +100,13 @@ export default function WhatYouGet() {
               <h3 className="text-2xl font-bold text-white mb-2">E-Knjiga</h3>
               <div className="inline-flex items-baseline gap-1 mb-3">
                 <span className="text-3xl font-black text-orange-400">€16.99</span>
-                <span className="text-stone-500 text-sm">jednokratno</span>
+                <span className="text-[#78716c] text-sm">jednokratno</span>
               </div>
-              <p className="text-stone-400 text-sm mb-4">50+ zdravih recepata za deserte</p>
+              <p className="text-[#a8a29e] text-sm mb-4">50+ zdravih recepata za deserte</p>
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeTab === 'book'
                   ? 'bg-orange-500 text-white'
-                  : 'bg-stone-800 text-stone-300'
+                  : 'bg-[#292524] text-[#d6d3d1]'
               }`}>
                 {activeTab === 'book' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
               </div>
@@ -149,7 +149,7 @@ export default function WhatYouGet() {
             className={`flex-1 cursor-pointer rounded-3xl p-6 transition-all duration-500 border-2 ${
               activeTab === 'planner'
                 ? 'bg-gradient-to-br from-purple-600/30 to-indigo-600/30 border-purple-500 shadow-2xl shadow-purple-500/20 scale-[1.02]'
-                : 'bg-stone-900/50 border-stone-800 hover:border-purple-500/50 hover:bg-stone-900'
+                : 'bg-[#1c1917]/50 border-[#292524] hover:border-purple-500/50 hover:bg-[#1c1917]'
             }`}
           >
             <div className="text-center">
@@ -167,13 +167,13 @@ export default function WhatYouGet() {
               <h3 className="text-2xl font-bold text-white mb-2">AI Planner</h3>
               <div className="inline-flex items-baseline gap-1 mb-3">
                 <span className="text-3xl font-black text-purple-400">€4.99</span>
-                <span className="text-stone-500 text-sm">/mesečno</span>
+                <span className="text-[#78716c] text-sm">/mesečno</span>
               </div>
-              <p className="text-stone-400 text-sm mb-4">Personalizovani planovi ishrane</p>
+              <p className="text-[#a8a29e] text-sm mb-4">Personalizovani planovi ishrane</p>
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeTab === 'planner'
                   ? 'bg-purple-500 text-white'
-                  : 'bg-stone-800 text-stone-300'
+                  : 'bg-[#292524] text-[#d6d3d1]'
               }`}>
                 {activeTab === 'planner' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
               </div>
