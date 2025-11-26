@@ -88,7 +88,7 @@ export default function WhatYouGet() {
             <div className="text-center">
               <div className="mb-4 h-48 overflow-hidden rounded-2xl relative group">
                 <img 
-                  src="https://images.unsplash.com/photo-1563729768-6af7c46d6eb5?w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=800&q=80" 
                   alt="E-Knjiga Recepata" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
