@@ -155,7 +155,7 @@ export default function WhatYouGet() {
             <div className="text-center">
               <div className="mb-4 h-48 overflow-hidden rounded-2xl relative group">
                 <img 
-                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80" 
                   alt="AI Meal Planner" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
