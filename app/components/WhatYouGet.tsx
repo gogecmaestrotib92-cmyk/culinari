@@ -72,6 +72,16 @@ export default function WhatYouGet() {
               }`}>
                 {activeTab === 'book' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
               </div>
+
+              <div className="mt-4">
+                <a 
+                  href="#pricing"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-block w-full py-3 rounded-xl font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:shadow-lg hover:scale-105 transition-all shadow-orange-500/20"
+                >
+                  Poruči Odmah
+                </a>
+              </div>
             </div>
 
             {/* E-Knjiga Benefits Slide */}
@@ -116,6 +126,16 @@ export default function WhatYouGet() {
                   : 'bg-gray-700 text-gray-300'
               }`}>
                 {activeTab === 'planner' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
+              </div>
+
+              <div className="mt-4">
+                <a 
+                  href="#pricing"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-block w-full py-3 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:shadow-lg hover:scale-105 transition-all shadow-purple-500/20"
+                >
+                  Poruči Odmah
+                </a>
               </div>
             </div>
 
