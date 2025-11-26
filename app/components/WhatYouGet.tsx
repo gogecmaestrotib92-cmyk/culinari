@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
+import PayPalButton from './PayPalButton';
 
 export default function WhatYouGet() {
   const [activeTab, setActiveTab] = useState<'book' | 'planner' | null>(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{name: string; priceEUR: string; description: string} | null>(null);
 
   const bookBenefits = [
     { icon: "📖", title: "50+ Ekskluzivnih Recepata" },
@@ -30,6 +33,31 @@ export default function WhatYouGet() {
 
   const handleTabClick = (tab: 'book' | 'planner') => {
     setActiveTab(activeTab === tab ? null : tab);
+  };
+
+  const handleBuyClick = (planType: 'book' | 'planner') => {
+    if (planType === 'book') {
+      setSelectedPlan({
+        name: "E-Knjiga Recepata",
+        priceEUR: "16.99",
+        description: "Digitalna kolekcija zdravih deserata"
+      });
+    } else {
+      setSelectedPlan({
+        name: "AI Meal Planner",
+        priceEUR: "4.99",
+        description: "Personalizovani planer obroka"
+      });
+    }
+    setShowModal(true);
+  };
+
+  const handlePaymentSuccess = (details: any) => {
+    console.log('Payment successful:', details);
+    setTimeout(() => {
+      setShowModal(false);
+      setSelectedPlan(null);
+    }, 3000);
   };
 
   return (
@@ -74,13 +102,15 @@ export default function WhatYouGet() {
               </div>
 
               <div className="mt-4">
-                <a 
-                  href="#pricing"
-                  onClick={(e) => e.stopPropagation()}
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleBuyClick('book');
+                  }}
                   className="inline-block w-full py-3 rounded-xl font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:shadow-lg hover:scale-105 transition-all shadow-orange-500/20"
                 >
                   Poruči Odmah
-                </a>
+                </button>
               </div>
             </div>
 
@@ -129,13 +159,15 @@ export default function WhatYouGet() {
               </div>
 
               <div className="mt-4">
-                <a 
-                  href="#pricing"
-                  onClick={(e) => e.stopPropagation()}
+                <button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleBuyClick('planner');
+                  }}
                   className="inline-block w-full py-3 rounded-xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:shadow-lg hover:scale-105 transition-all shadow-purple-500/20"
                 >
                   Poruči Odmah
-                </a>
+                </button>
               </div>
             </div>
 
@@ -168,6 +200,48 @@ export default function WhatYouGet() {
           </div>
         </ScrollReveal>
       </div>
+
+      {/* PayPal Modal */}
+      {showModal && selectedPlan && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-300">
+            <div className="p-6 border-b border-gray-100">
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-bold text-gray-900">Završite Kupovinu</h3>
+                <button 
+                  onClick={() => {
+                    setShowModal(false);
+                    setSelectedPlan(null);
+                  }}
+                  className="text-gray-400 hover:text-gray-600 text-3xl leading-none"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+            
+            <div className="p-6">
+              <div className="mb-6 p-4 bg-orange-50 rounded-xl">
+                <p className="text-gray-700 font-medium">{selectedPlan.name}</p>
+                <p className="text-sm text-gray-500">{selectedPlan.description}</p>
+              </div>
+              
+              <PayPalButton
+                amount={selectedPlan.priceEUR}
+                description={selectedPlan.name}
+                onSuccess={handlePaymentSuccess}
+              />
+              
+              <div className="mt-6 text-center text-sm text-gray-500">
+                <p className="flex items-center justify-center gap-2">
+                  <span>🔒</span>
+                  Sigurna transakcija zaštićena SSL enkripcijom
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
