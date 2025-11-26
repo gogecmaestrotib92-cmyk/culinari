@@ -4,156 +4,146 @@ import { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 export default function WhatYouGet() {
-  const [activeTab, setActiveTab] = useState<'book' | 'planner'>('book');
+  const [activeTab, setActiveTab] = useState<'book' | 'planner' | null>(null);
 
-  const bookFeatures = [
-    { icon: "📖", title: "50+ Recepata" },
-    { icon: "📸", title: "HD Fotografije" },
+  const bookBenefits = [
+    { icon: "📖", title: "50+ Ekskluzivnih Recepata" },
+    { icon: "📸", title: "HD Fotografije Svakog Koraka" },
     { icon: "🎥", title: "Video Tutoriali" },
-    { icon: "📊", title: "Nutritivne Info" },
-    { icon: "🛒", title: "Liste za Kupovinu" },
-    { icon: "📱", title: "Mobilni Pristup" },
-    { icon: "🔄", title: "Besplatna Ažuriranja" },
-    { icon: "💬", title: "Email Podrška" },
+    { icon: "📊", title: "Nutritivne Vrednosti" },
+    { icon: "🛒", title: "Gotove Liste za Kupovinu" },
+    { icon: "🔄", title: "Besplatna Ažuriranja Zauvek" },
+    { icon: "📱", title: "Pristup na Svim Uređajima" },
+    { icon: "💬", title: "Email Podrška 24/7" },
   ];
 
-  const plannerFeatures = [
-    { icon: "🤖", title: "AI Personalizacija" },
-    { icon: "🗓️", title: "Nedeljni Planovi" },
-    { icon: "🛒", title: "Smart Lista" },
-    { icon: "⏰", title: "Notifikacije" },
+  const plannerBenefits = [
+    { icon: "🤖", title: "AI Personalizacija Recepata" },
+    { icon: "🗓️", title: "Automatski Nedeljni Planovi" },
+    { icon: "🛒", title: "Smart Lista Namirnica" },
     { icon: "📈", title: "Praćenje Progresa" },
-    { icon: "🔄", title: "Instant Zamene" },
+    { icon: "🔄", title: "Instant Zamene Recepata" },
     { icon: "👨‍👩‍👧‍👦", title: "Porodični Mod" },
-    { icon: "⭐", title: "VIP Pristup" },
+    { icon: "⏰", title: "Pametne Notifikacije" },
+    { icon: "⭐", title: "VIP Pristup Novim Funkcijama" },
   ];
 
-  const features = activeTab === 'book' ? bookFeatures : plannerFeatures;
+  const handleTabClick = (tab: 'book' | 'planner') => {
+    setActiveTab(activeTab === tab ? null : tab);
+  };
 
   return (
-    <section id="what-you-get" className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="what-you-get" className="py-16 md:py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 shadow-lg shadow-orange-200">
-              📦 Šta je uključeno
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-3">
-              Sve što vam <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">treba</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3">
+              Izaberite vaš <span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">paket</span>
             </h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Kliknite na paket da vidite sve pogodnosti
+            </p>
           </div>
         </ScrollReveal>
 
-        {/* Tab Switcher */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex bg-gray-100 p-1.5 rounded-2xl">
-            <button
-              onClick={() => setActiveTab('book')}
-              className={`relative px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
-                activeTab === 'book'
-                  ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="flex items-center gap-2">
-                📚 E-Knjiga
-                <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  activeTab === 'book' ? 'bg-white/20' : 'bg-orange-100 text-orange-600'
-                }`}>€16.99</span>
-              </span>
-            </button>
-            <button
-              onClick={() => setActiveTab('planner')}
-              className={`relative px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 ${
-                activeTab === 'planner'
-                  ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="flex items-center gap-2">
-                🤖 AI Planner
-                <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  activeTab === 'planner' ? 'bg-white/20' : 'bg-purple-100 text-purple-600'
-                }`}>€4.99/mes</span>
-              </span>
-            </button>
-          </div>
-        </div>
-
-        {/* Features Grid - Compact */}
-        <div className="max-w-4xl mx-auto">
-          <div className={`grid grid-cols-2 sm:grid-cols-4 gap-3 transition-all duration-300 ${
-            activeTab === 'book' ? 'opacity-100' : 'opacity-100'
-          }`}>
-            {features.map((feature, index) => (
-              <div
-                key={`${activeTab}-${index}`}
-                className={`group flex items-center gap-3 p-4 rounded-2xl transition-all duration-300 hover:scale-105 cursor-pointer ${
-                  activeTab === 'book'
-                    ? 'bg-gradient-to-br from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 border border-orange-100'
-                    : 'bg-gradient-to-br from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 border border-purple-100'
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <span className="text-2xl group-hover:scale-110 transition-transform">{feature.icon}</span>
-                <span className="font-semibold text-gray-800 text-sm">{feature.title}</span>
+        {/* Product Cards */}
+        <div className="flex flex-col md:flex-row justify-center gap-6 max-w-4xl mx-auto">
+          {/* E-Knjiga Card */}
+          <div 
+            onClick={() => handleTabClick('book')}
+            className={`flex-1 cursor-pointer rounded-3xl p-6 transition-all duration-500 border-2 ${
+              activeTab === 'book'
+                ? 'bg-gradient-to-br from-orange-500/30 to-amber-500/30 border-orange-500 shadow-2xl shadow-orange-500/20 scale-[1.02]'
+                : 'bg-gray-800/50 border-gray-700 hover:border-orange-500/50 hover:bg-gray-800'
+            }`}
+          >
+            <div className="text-center">
+              <div className="text-5xl mb-3">📚</div>
+              <h3 className="text-2xl font-bold text-white mb-2">E-Knjiga</h3>
+              <div className="inline-flex items-baseline gap-1 mb-3">
+                <span className="text-3xl font-black text-orange-400">€16.99</span>
+                <span className="text-gray-500 text-sm">jednokratno</span>
               </div>
-            ))}
+              <p className="text-gray-400 text-sm mb-4">50+ zdravih recepata za deserte</p>
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                activeTab === 'book'
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-gray-700 text-gray-300'
+              }`}>
+                {activeTab === 'book' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
+              </div>
+            </div>
+
+            {/* E-Knjiga Benefits Slide */}
+            <div className={`overflow-hidden transition-all duration-500 ${
+              activeTab === 'book' ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+            }`}>
+              <div className="grid grid-cols-1 gap-3">
+                {bookBenefits.map((benefit, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-orange-500/10 border border-orange-500/20"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <span className="text-2xl">{benefit.icon}</span>
+                    <span className="text-white font-medium">{benefit.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Quick Info */}
-          <div className={`mt-6 p-4 rounded-2xl text-center transition-all duration-300 ${
-            activeTab === 'book'
-              ? 'bg-gradient-to-r from-orange-500 to-amber-500'
-              : 'bg-gradient-to-r from-purple-600 to-indigo-600'
-          }`}>
-            <p className="text-white font-medium">
-              {activeTab === 'book' 
-                ? '✨ Jednokratna kupovina • Doživotni pristup • 100% garancija povrata'
-                : '✨ Otkaži bilo kad • Novi recepti svake nedelje • AI prilagođavanje'
-              }
-            </p>
+          {/* AI Planner Card */}
+          <div 
+            onClick={() => handleTabClick('planner')}
+            className={`flex-1 cursor-pointer rounded-3xl p-6 transition-all duration-500 border-2 ${
+              activeTab === 'planner'
+                ? 'bg-gradient-to-br from-purple-600/30 to-indigo-600/30 border-purple-500 shadow-2xl shadow-purple-500/20 scale-[1.02]'
+                : 'bg-gray-800/50 border-gray-700 hover:border-purple-500/50 hover:bg-gray-800'
+            }`}
+          >
+            <div className="text-center">
+              <div className="text-5xl mb-3">🤖</div>
+              <h3 className="text-2xl font-bold text-white mb-2">AI Planner</h3>
+              <div className="inline-flex items-baseline gap-1 mb-3">
+                <span className="text-3xl font-black text-purple-400">€4.99</span>
+                <span className="text-gray-500 text-sm">/mesečno</span>
+              </div>
+              <p className="text-gray-400 text-sm mb-4">Personalizovani planovi ishrane</p>
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                activeTab === 'planner'
+                  ? 'bg-purple-500 text-white'
+                  : 'bg-gray-700 text-gray-300'
+              }`}>
+                {activeTab === 'planner' ? '▼ Sakrij pogodnosti' : '▶ Prikaži pogodnosti'}
+              </div>
+            </div>
+
+            {/* AI Planner Benefits Slide */}
+            <div className={`overflow-hidden transition-all duration-500 ${
+              activeTab === 'planner' ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'
+            }`}>
+              <div className="grid grid-cols-1 gap-3">
+                {plannerBenefits.map((benefit, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center gap-3 p-3 rounded-xl bg-purple-500/10 border border-purple-500/20"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <span className="text-2xl">{benefit.icon}</span>
+                    <span className="text-white font-medium">{benefit.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bonus Badge */}
         <ScrollReveal delay={200}>
-          <div className="mt-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-5 py-2.5 rounded-full shadow-lg text-sm font-bold">
-              🎁 BONUS: E-Knjiga + 1 mesec AI Plannera GRATIS!
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* Compact ChatGPT Comparison */}
-        <ScrollReveal direction="up">
-          <div className="mt-10 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-6 text-white max-w-4xl mx-auto">
-            <h3 className="text-lg font-bold mb-4 text-center">
-              Zašto Culinari umesto ChatGPT-a? 🤔
-            </h3>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-red-400">
-                  <span>✗</span><span className="text-gray-400">Generički recepti</span>
-                </div>
-                <div className="flex items-center gap-2 text-red-400">
-                  <span>✗</span><span className="text-gray-400">Bez fotografija</span>
-                </div>
-                <div className="flex items-center gap-2 text-red-400">
-                  <span>✗</span><span className="text-gray-400">Bez garancije</span>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-green-400">
-                  <span>✓</span><span className="text-gray-200">Testirani recepti</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-400">
-                  <span>✓</span><span className="text-gray-200">HD slike + video</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-400">
-                  <span>✓</span><span className="text-gray-200">100% garancija</span>
-                </div>
-              </div>
+          <div className="mt-10 flex justify-center">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-full shadow-lg shadow-green-500/30 text-sm font-bold animate-pulse">
+              🎁 BONUS: Kupi E-Knjigu i dobij 1 mesec AI Plannera GRATIS!
             </div>
           </div>
         </ScrollReveal>

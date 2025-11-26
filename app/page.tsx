@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import AboutVanja from './components/AboutVanja';
 import FeaturedDesserts from './components/FeaturedDesserts';
 import VideoPreview from './components/VideoPreview';
-import HealthBenefits from './components/HealthBenefits';
 import WhatYouGet from './components/WhatYouGet';
 import Testimonials from './components/Testimonials';
 import FreeSample from './components/FreeSample';
@@ -46,7 +45,6 @@ export default function Home() {
           <AboutVanja />
           <FeaturedDesserts />
           <VideoPreview />
-          <HealthBenefits />
           <WhatYouGet />
           <Testimonials />
           <FreeSample />
