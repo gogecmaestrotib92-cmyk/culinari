@@ -1,34 +1,55 @@
 import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://culinari.rs'
+  const currentDate = new Date()
+  
   return [
     {
-      url: 'https://culinari.rs',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: 'https://culinari.rs/#desserts',
-      lastModified: new Date(),
+      url: `${baseUrl}/#o-vanji`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/#desserts`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/#video`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/#what-you-get`,
+      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: 'https://culinari.rs/#benefits',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      url: `${baseUrl}/#testimonials`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
-      url: 'https://culinari.rs/#pricing',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      url: `${baseUrl}/#pricing`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
     },
     {
-      url: 'https://culinari.rs/#contact',
-      lastModified: new Date(),
+      url: `${baseUrl}/#contact`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },

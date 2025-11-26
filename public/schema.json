@@ -1,20 +1,76 @@
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Culinari - AI Kulinarstvo uz Vanju",
-  "url": "https://culinari.rs",
-  "description": "AI kulinarstvo uz Vanju donosi zdrave deserte bez šećera i aditiva. 100% prirodni sastojci, AI-optimizovana ishrana.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Culinari",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://culinari.rs/logo.png"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://culinari.rs/#website",
+      "name": "Culinari - Zdravi Deserti Bez Šećera",
+      "alternateName": "Culinari Srbija",
+      "url": "https://culinari.rs",
+      "description": "E-knjiga sa 50+ AI recepata za zdrave deserte bez šećera. Pana kota, čokoladni mus, voćne torte. Dostava širom Srbije.",
+      "inLanguage": "sr-RS",
+      "publisher": {
+        "@id": "https://culinari.rs/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://culinari.rs/#organization",
+      "name": "Culinari",
+      "url": "https://culinari.rs",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://culinari.rs/logo.png",
+        "width": 600,
+        "height": 60
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+381-11-123-4567",
+        "contactType": "customer service",
+        "areaServed": "RS",
+        "availableLanguage": ["Serbian"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Beograd",
+        "addressCountry": "RS"
+      },
+      "sameAs": [
+        "https://www.facebook.com/culinari",
+        "https://www.instagram.com/culinari_rs"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://culinari.rs/#localbusiness",
+      "name": "Culinari - Zdravi Deserti",
+      "description": "Prodaja e-knjiga sa receptima za zdrave deserte bez šećera u Srbiji",
+      "url": "https://culinari.rs",
+      "telephone": "+381-11-123-4567",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Beograd",
+        "addressRegion": "Srbija",
+        "postalCode": "11000",
+        "addressCountry": "RS"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.7866,
+        "longitude": 20.4489
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Serbia"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
     }
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://culinari.rs/?s={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+  ]
 }
