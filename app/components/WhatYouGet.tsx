@@ -86,7 +86,17 @@ export default function WhatYouGet() {
             }`}
           >
             <div className="text-center">
-              <div className="text-5xl mb-3">📚</div>
+              <div className="mb-4 h-48 overflow-hidden rounded-2xl relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1563729768-6af7c46d6eb5?w=800&q=80" 
+                  alt="E-Knjiga Recepata" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                  📚 BESTSELLER
+                </div>
+              </div>
               <h3 className="text-2xl font-bold text-white mb-2">E-Knjiga</h3>
               <div className="inline-flex items-baseline gap-1 mb-3">
                 <span className="text-3xl font-black text-orange-400">€16.99</span>
@@ -143,7 +153,17 @@ export default function WhatYouGet() {
             }`}
           >
             <div className="text-center">
-              <div className="text-5xl mb-3">🤖</div>
+              <div className="mb-4 h-48 overflow-hidden rounded-2xl relative group">
+                <img 
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" 
+                  alt="AI Meal Planner" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-lg">
+                  🤖 AI POWERED
+                </div>
+              </div>
               <h3 className="text-2xl font-bold text-white mb-2">AI Planner</h3>
               <div className="inline-flex items-baseline gap-1 mb-3">
                 <span className="text-3xl font-black text-purple-400">€4.99</span>
