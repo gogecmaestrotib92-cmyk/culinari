@@ -180,13 +180,13 @@ export default function Testimonials() {
                     <div className="flex-1 flex flex-col justify-between">
                       <div className="relative">
                         <span className="absolute -top-2 -left-2 text-4xl text-orange-500/30">"</span>
-                        <p className="text-gray-200 text-lg md:text-xl leading-relaxed pl-4">
+                        <p className="text-gray-700 text-lg md:text-xl leading-relaxed pl-4">
                           {testimonial.text}
                         </p>
                         <span className="absolute -bottom-4 right-0 text-4xl text-orange-500/30">"</span>
                       </div>
                       <div className="mt-4">
-                        <span className="inline-block bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-xs font-medium border border-orange-500/30">
+                        <span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium border border-orange-200">
                           ✓ Kupio/la: {testimonial.product}
                         </span>
                       </div>
